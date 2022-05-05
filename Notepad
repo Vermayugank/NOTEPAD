@@ -1,0 +1,44 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+public class swing extends JFrame {
+    JPanel panel;
+    JFrame frame;
+    JMenuBar menubar;
+    JMenuItem open,save,exit,saveas,undo,redo,selectAll;
+    JTextArea textenter;
+    JMenu file,edit,format;
+    swing(){
+        frame =new JFrame("Notepad");
+        file = new JMenu("File");
+        edit = new JMenu("Edit");
+        format = new JMenu("Format");
+        textenter=new JTextArea();
+        menubar=new JMenuBar();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //frame.setLayeredPane(new BorderLayout());
+        frame.add(textenter);
+        frame.setJMenuBar(menubar);
+        menubar.add(file);
+        open=new JMenuItem("OPEN");
+        save=new JMenuItem("SAVE");
+        saveas=new JMenuItem("SAVEAS");
+        undo =new JMenuItem("UNDO");
+        redo =new JMenuItem("REDO");
+        selectAll=new JMenuItem("Selectall");
+        file.add(open);
+        file.add(save);
+        file.add(saveas);
+        menubar.add(edit);
+        menubar.add(format);
+        format.add(undo);
+        format.add(redo);
+        format.add(selectAll);
+        frame.setSize(800,600);
+        frame.setVisible(true);
+    }
+    public static void main(String[] args){
+        swing s = new swing();
+    }
+
+}
